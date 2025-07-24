@@ -16,15 +16,15 @@ const (
 func WalkingSpentCalories(steps int, weight, height float64, duration time.Duration) (float64, error) {
 	// TODO: done
 	if steps <= 0 {
-		return 0, errors.New("некорректные данные о шагах")
+		return 0, errors.New("incorrect data about steps")
 	}
 
 	if weight <= 0 || height <= 0 {
-		return 0, errors.New("некорректные данные о человеке (рост или вес)")
+		return 0, errors.New("incorrect data about human (height/weight)")
 	}
 
 	if duration <= 0 {
-		return 0, errors.New("некорректные данные о продолжительности")
+		return 0, errors.New("incorret data about duration")
 	}
 
 	return (weight * MeanSpeed(steps, height, duration) * duration.Minutes()) / minInH * walkingCaloriesCoefficient, nil
@@ -33,15 +33,15 @@ func WalkingSpentCalories(steps int, weight, height float64, duration time.Durat
 func RunningSpentCalories(steps int, weight, height float64, duration time.Duration) (float64, error) {
 	// TODO: done
 	if steps <= 0 {
-		return 0, errors.New("некорректные данные о шагах")
+		return 0, errors.New("ncorrect data about steps")
 	}
 
 	if weight <= 0 || height <= 0 {
-		return 0, errors.New("некорректные данные о человеке (рост или вес)")
+		return 0, errors.New("incorrect data about human (height/weight)")
 	}
 
 	if duration <= 0 {
-		return 0, errors.New("некорректные данные о продолжительности")
+		return 0, errors.New("incorret data about duration")
 	}
 
 	return (weight * MeanSpeed(steps, height, duration) * duration.Minutes()) / minInH, nil

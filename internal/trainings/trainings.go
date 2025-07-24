@@ -23,7 +23,7 @@ func (t *Training) Parse(datastring string) (err error) {
 	// TODO: done
 	dataSlice := strings.Split(datastring, ",")
 	if len(dataSlice) != 3 {
-		return errors.New("ошибка в формате данных")
+		return errors.New("incorrect data format")
 	}
 
 	t.Steps, err = strconv.Atoi(dataSlice[0])
@@ -32,7 +32,7 @@ func (t *Training) Parse(datastring string) (err error) {
 	}
 
 	if t.Steps <= 0 {
-		return errors.New("неверное количество шагов")
+		return errors.New("incorrect amount of steps")
 	}
 
 	t.TrainingType = dataSlice[1]
@@ -43,7 +43,7 @@ func (t *Training) Parse(datastring string) (err error) {
 	}
 
 	if t.Duration <= 0 {
-		return errors.New("неверный формат о продолжительности")
+		return errors.New("incorrect format about duration")
 	}
 
 	return nil

@@ -22,7 +22,7 @@ func (ds *DaySteps) Parse(datastring string) (err error) {
 	// TODO: done
 	dataSlice := strings.Split(datastring, ",")
 	if len(dataSlice) != 2 {
-		return errors.New("неверный формат данных")
+		return errors.New("incorrect data format")
 	}
 
 	ds.Steps, err = strconv.Atoi(dataSlice[0])
@@ -30,7 +30,7 @@ func (ds *DaySteps) Parse(datastring string) (err error) {
 		return err
 	}
 	if ds.Steps <= 0 {
-		return errors.New("неверные данные о шагах")
+		return errors.New("incorrect data about steps")
 	}
 
 	ds.Duration, err = time.ParseDuration(dataSlice[1])
@@ -38,7 +38,7 @@ func (ds *DaySteps) Parse(datastring string) (err error) {
 		return err
 	}
 	if ds.Duration <= 0 {
-		return errors.New("неверные данные о продолжительности")
+		return errors.New("incorrect data about duration")
 	}
 
 	return nil
